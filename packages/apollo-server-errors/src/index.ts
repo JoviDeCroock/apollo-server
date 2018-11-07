@@ -163,6 +163,7 @@ export class ValidationError extends ApolloError {
     super(message, 'GRAPHQL_VALIDATION_FAILED');
 
     Object.defineProperty(this, 'name', { value: 'ValidationError' });
+    Object.defineProperty(this, 'statusCode', 400);
   }
 }
 
@@ -171,6 +172,7 @@ export class AuthenticationError extends ApolloError {
     super(message, 'UNAUTHENTICATED');
 
     Object.defineProperty(this, 'name', { value: 'AuthenticationError' });
+    Object.defineProperty(this, 'statusCode', 403);
   }
 }
 
@@ -179,6 +181,7 @@ export class ForbiddenError extends ApolloError {
     super(message, 'FORBIDDEN');
 
     Object.defineProperty(this, 'name', { value: 'ForbiddenError' });
+    Object.defineProperty(this, 'statusCode', 401);
   }
 }
 
